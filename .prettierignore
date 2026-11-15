@@ -1,0 +1,7 @@
+.archive
+.local
+node_modules
+dist
+outputs
+package-lock.json
+src/content/devlog.md

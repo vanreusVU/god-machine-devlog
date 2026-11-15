@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.archive/
+.local/
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+*.log
+*.tsbuildinfo
+outputs/
+.DS_Store
+Thumbs.db
+
