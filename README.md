@@ -40,7 +40,6 @@ public/
 scripts/                    Content validation and optional asset preparation
 tests/                      Content and replay tests
 docs/                       Content policy and migration notes
-.openai/hosting.json         Sites deployment identity and output directory
 ```
 
 ## Editing the story
@@ -51,7 +50,7 @@ The replay sandbox is an illustrative diagram, **not a recreation of Unreal’s 
 
 ## Assets and the local archive
 
-All runtime assets are committed. Normal development and deployment need only Node.js. The original publishing package, review notes, source frames, GIFs, and old Python tooling were preserved locally at `.archive/legacy-itch/`. That directory is deliberately ignored and is **not included in the public repository or deployment**.
+All runtime assets are committed. Normal development needs only Node.js. The original publishing package, review notes, source frames, GIFs, and old Python tooling were preserved locally at `.archive/legacy-itch/`. That directory is deliberately ignored and is **not included in the public repository**.
 
 If you have the original package and need to regenerate optimized media:
 
@@ -62,9 +61,16 @@ npm run check:content
 
 The asset preparation script uses Sharp, preserves the originals, converts the required images to WebP, extracts GIF posters, and copies existing MP4 clips. It does not need the original external `G:` drive, FFmpeg, or the old scene engine. Raw recordings and the old rendering engine were not part of this folder and remain external.
 
-## Hosting
+## Local production preview
 
-`npm run build` produces a static site in `dist/`. Deploy that directory to a static host. This project is also registered with Sites through `.openai/hosting.json`. GitHub is the public source repository; publishing a commit there does not automatically publish a Sites deployment.
+This project runs locally. No hosting account or sign-in is required. To check an optimized production build:
+
+```sh
+npm run build
+npm run preview
+```
+
+Open the URL printed by Vite, normally <http://localhost:4173>. GitHub holds the public source; pushes run validation only and do not deploy the site. Hosting is not part of the development workflow.
 
 ## Credits and rights
 

@@ -7,4 +7,5 @@
 - Keep `.archive/` local and ignored. It contains superseded drafts, original exports, review notes, and obsolete tooling. Do not publish it.
 - Serve fonts locally, keep video playback user-initiated, and respect reduced-motion preferences. Maintain keyboard operation and visible focus indicators.
 - Run `npm test`, `npm run check:content`, and `npm run build` after meaningful implementation changes. Run `npm run format` for edited application files.
-- Production output is `dist/`. Preserve the project identity in `.openai/hosting.json`. GitHub source pushes and Sites deployments are separate operations.
+- Work locally by default. Do not register, synchronize, or deploy this project with Sites or another hosting service unless the user explicitly requests hosting. GitHub remains the public source repository.
+- Vite serves local development at `http://localhost:5173`. Production output is `dist/`; use `npm run preview` to inspect a local production build.
